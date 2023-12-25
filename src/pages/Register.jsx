@@ -4,7 +4,7 @@ import "../styles/register.css";
 import axios from "axios";
 import toast from "react-hot-toast";
 
-axios.defaults.baseURL = "http://localhost:5000/api";
+axios.defaults.baseURL = "https://tabibi-s7ln.onrender.com/api";
 
 function Register() {
   // const [file, setFile] = useState("");
@@ -67,6 +67,8 @@ function Register() {
       } else if (password !== confpassword) {
         return toast.error("Passwords do not match");
       }
+      console.log(formDetails);
+
       await toast.promise(
         axios.post("/user/register", {
           firstname,
@@ -81,6 +83,7 @@ function Register() {
           loading: "Registering user...",
         }
       );
+    
       return navigate("/login");
     } catch (error) {}
   };

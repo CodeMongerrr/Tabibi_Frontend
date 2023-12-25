@@ -8,7 +8,7 @@ import Empty from "./Empty";
 import fetchData from "../helper/apiCall";
 import "../styles/user.css";
 
-axios.defaults.baseURL = "http://localhost:5000/api";
+axios.defaults.baseURL = "https://tabibi-s7ln.onrender.com/api";
 
 const AdminAppointments = () => {
   const [appointments, setAppointments] = useState([]);

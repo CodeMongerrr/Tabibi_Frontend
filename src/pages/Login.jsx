@@ -8,7 +8,7 @@ import { setUserInfo } from "../redux/reducers/rootSlice";
 import jwt_decode from "jwt-decode";
 import fetchData from "../helper/apiCall";
 
-axios.defaults.baseURL = "http://localhost:5000/api";
+axios.defaults.baseURL = "https://tabibi-s7ln.onrender.com/api";
 
 function Login() {
   const dispatch = useDispatch();

@@ -8,8 +8,8 @@ axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
 function DoctorApply() {
   const [formDetails, setFormDetails] = useState({
     specialization: "",
-    experience: "",
-    fees: "",
+    experience: 0,
+    fees:0,
     timing: "Timing",
   });
 
