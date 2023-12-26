@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Loading from "../components/Loading";
 import fetchData from "../helper/apiCall";
 import jwt_decode from "jwt-decode";
+import Navbar from "../components/Navbar";
 
 axios.defaults.baseURL = "https://tabibi-s7ln.onrender.com/api";
 
@@ -40,7 +41,7 @@ function Profile() {
       });
       setFile(temp.pic);
       dispatch(setLoading(false));
-    } catch (error) {}
+    } catch (error) { }
   };
 
   useEffect(() => {
@@ -117,113 +118,119 @@ function Profile() {
   return (
     <>
       {loading ? (
-        <Loading />
+        <>
+          <Navbar />
+          <Loading />
+        </>
       ) : (
-        <section className="register-section flex-center">
-          <div className="profile-container flex-center">
-            <h2 className="form-heading">Profile</h2>
-            <img
-              src={file}
-              alt="profile"
-              className="profile-pic"
-            />
-            <form
-              onSubmit={formSubmit}
-              className="register-form"
-            >
-              <div className="form-same-row">
-                <input
-                  type="text"
-                  name="firstname"
-                  className="form-input"
-                  placeholder="Enter your first name"
-                  value={formDetails.firstname}
-                  onChange={inputChange}
-                />
-                <input
-                  type="text"
-                  name="lastname"
-                  className="form-input"
-                  placeholder="Enter your last name"
-                  value={formDetails.lastname}
-                  onChange={inputChange}
-                />
-              </div>
-              <div className="form-same-row">
-                <input
-                  type="email"
-                  name="email"
-                  className="form-input"
-                  placeholder="Enter your email"
-                  value={formDetails.email}
-                  onChange={inputChange}
-                />
-                <select
-                  name="gender"
-                  value={formDetails.gender}
-                  className="form-input"
-                  id="gender"
-                  onChange={inputChange}
-                >
-                  <option value="neither">Prefer not to say</option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                </select>
-              </div>
-              <div className="form-same-row">
-                <input
-                  type="text"
-                  name="age"
-                  className="form-input"
-                  placeholder="Enter your age"
-                  value={formDetails.age}
-                  onChange={inputChange}
-                />
-                <input
-                  type="text"
-                  name="mobile"
-                  className="form-input"
-                  placeholder="Enter your mobile number"
-                  value={formDetails?.mobile}
-                  onChange={inputChange}
-                />
-              </div>
-              <textarea
-                type="text"
-                name="address"
-                className="form-input"
-                placeholder="Enter your address"
-                value={formDetails.address}
-                onChange={inputChange}
-                rows="2"
-              ></textarea>
-              <div className="form-same-row">
-                <input
-                  type="password"
-                  name="password"
-                  className="form-input"
-                  placeholder="Enter your password"
-                  value={formDetails.password}
-                  onChange={inputChange}
-                />
-                <input
-                  type="password"
-                  name="confpassword"
-                  className="form-input"
-                  placeholder="Confirm your password"
-                  value={formDetails.confpassword}
-                  onChange={inputChange}
-                />
-              </div>
-              <button
-                type="submit"
-                className="btn form-btn"
+        <>
+          <Navbar />
+          <section className="register-section flex-center h-[90vh]">
+            <div className="profile-container flex-center">
+              <h2 className="form-heading">Profile</h2>
+              <img
+                src={file}
+                alt="profile"
+                className="profile-pic"
+              />
+              <form
+                onSubmit={formSubmit}
+                className="register-form"
               >
-                update
-              </button>
-            </form>
-          </div>
-        </section>
+                <div className="form-same-row">
+                  <input
+                    type="text"
+                    name="firstname"
+                    className="form-input"
+                    placeholder="Enter your first name"
+                    value={formDetails.firstname}
+                    onChange={inputChange}
+                  />
+                  <input
+                    type="text"
+                    name="lastname"
+                    className="form-input"
+                    placeholder="Enter your last name"
+                    value={formDetails.lastname}
+                    onChange={inputChange}
+                  />
+                </div>
+                <div className="form-same-row">
+                  <input
+                    type="email"
+                    name="email"
+                    className="form-input"
+                    placeholder="Enter your email"
+                    value={formDetails.email}
+                    onChange={inputChange}
+                  />
+                  <select
+                    name="gender"
+                    value={formDetails.gender}
+                    className="form-input"
+                    id="gender"
+                    onChange={inputChange}
+                  >
+                    <option value="neither">Prefer not to say</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                </div>
+                <div className="form-same-row">
+                  <input
+                    type="text"
+                    name="age"
+                    className="form-input"
+                    placeholder="Enter your age"
+                    value={formDetails.age}
+                    onChange={inputChange}
+                  />
+                  <input
+                    type="text"
+                    name="mobile"
+                    className="form-input"
+                    placeholder="Enter your mobile number"
+                    value={formDetails?.mobile}
+                    onChange={inputChange}
+                  />
+                </div>
+                <textarea
+                  type="text"
+                  name="address"
+                  className="form-input"
+                  placeholder="Enter your address"
+                  value={formDetails.address}
+                  onChange={inputChange}
+                  rows="2"
+                ></textarea>
+                <div className="form-same-row">
+                  <input
+                    type="password"
+                    name="password"
+                    className="form-input"
+                    placeholder="Enter your password"
+                    value={formDetails.password}
+                    onChange={inputChange}
+                  />
+                  <input
+                    type="password"
+                    name="confpassword"
+                    className="form-input"
+                    placeholder="Confirm your password"
+                    value={formDetails.confpassword}
+                    onChange={inputChange}
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="btn form-btn"
+                >
+                  update
+                </button>
+              </form>
+            </div>
+          </section>
+        </>
       )}
     </>
   );

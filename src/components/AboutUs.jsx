@@ -11,6 +11,7 @@ const AboutUs = () => {
             <img
               src={image}
               alt="hero"
+              style={{ width: "85%", height: "auto" }}
             />
           </div>
           <div className="hero-content">

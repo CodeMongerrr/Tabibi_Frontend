@@ -7,9 +7,9 @@ import { NavLink } from "react-router-dom";
 const Footer = () => {
   return (
     <>
-      <footer>
+      <footer className="foot">
         <div className="footer">
-          <div className="footer-links">
+          {/* <div className="footer-links">
             <h3>Links</h3>
             <ul>
               <li>
@@ -63,7 +63,7 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </footer>
     </>
