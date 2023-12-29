@@ -57,12 +57,3 @@ See [`package.json`](https://github.com/CodeMongerrr/Tabibi_Frontend/blob/master
 
 Use the GitHub Issues tab to report bugs and suggest enhancements.
 
----
-
-This documentation provides a basic overview of the Tabibi Frontend repository. For more detailed information, refer to the specific files and code within the repository.
-
----
-
-**Note:** You are currently using the free plan of AskTheCode, which has limited requests. To increase your quota and access more features, consider checking out the [available plans](https://c7d59216ee8ec59bda5e51ffc17a994d.auth.portal-pluginlab.ai/pricing).
-
-Also, AskTheCode is now available as a custom GPT! Your active subscription will be valid for this GPT as well. Try it out [here](https://chat.openai.com/g/g-3s6SJ5V7S-askthecode).
